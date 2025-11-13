@@ -1,0 +1,102 @@
+/* Custom utility classes for Villa Augeval brand colors */
+/* Updated color palette: primary colors changed to brown/beige, accent red preserved */
+
+.bg-neutral-cream {
+  background-color: #faf7f2;
+}
+.bg-neutral-beige {
+  background-color: #e8e3d6;
+}
+.bg-neutral-brown {
+  background-color: #453630;
+}
+.bg-primary-brown {
+  background-color: #6b5b4f;
+}
+.bg-primary-beige {
+  background-color: #d4af8f;
+}
+.bg-accent-red {
+  background-color: #dc153d;
+}
+.bg-green-amande {
+  background-color: #a8c69f;
+}
+
+.text-neutral-cream {
+  color: #faf7f2;
+}
+.text-neutral-beige {
+  color: #e8e3d6;
+}
+.text-neutral-brown {
+  color: #453630;
+}
+.text-text-dark {
+  color: #1a1a1a;
+}
+.text-text-gray {
+  color: #6b6b6b;
+}
+.text-primary-brown {
+  color: #6b5b4f;
+}
+.text-primary-beige {
+  color: #d4af8f;
+}
+.text-accent-red {
+  color: #dc153d;
+}
+.text-green-amande {
+  color: #a8c69f;
+}
+
+.border-neutral-cream {
+  border-color: #faf7f2;
+}
+.border-neutral-beige {
+  border-color: #e8e3d6;
+}
+.border-neutral-brown {
+  border-color: #453630;
+}
+.border-primary-brown {
+  border-color: #6b5b4f;
+}
+.border-primary-beige {
+  border-color: #d4af8f;
+}
+.border-accent-red {
+  border-color: #dc153d;
+}
+.border-green-amande {
+  border-color: #a8c69f;
+}
+
+/* Hover variants */
+.hover\:bg-primary-beige:hover {
+  background-color: #d4af8f;
+}
+.hover\:bg-accent-red:hover {
+  background-color: #dc153d;
+}
+.hover\:text-primary-beige:hover {
+  color: #d4af8f;
+}
+.hover\:text-accent-red:hover {
+  color: #dc153d;
+}
+.hover\:border-primary-beige:hover {
+  border-color: #d4af8f;
+}
+
+/* Opacity modifiers */
+.bg-primary-beige\/80 {
+  background-color: rgba(212, 175, 143, 0.8);
+}
+.bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.border-primary-beige\/20 {
+  border-color: rgba(212, 175, 143, 0.2);
+}

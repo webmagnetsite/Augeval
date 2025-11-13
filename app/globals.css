@@ -1,0 +1,333 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Brand Colors */
+  /* Updated primary colors: red to brown, gold to beige */
+  --primary-brown: #6b5b4f;
+  --primary-beige: #d4af8f;
+  --accent-red: #dc153d;
+  --neutral-cream: #faf7f2;
+  --neutral-beige: #e8e3d6;
+  --text-dark: #1a1a1a;
+  --text-gray: #6b6b6b;
+  --white: #ffffff;
+
+  /* Classes pour les polices personnalisées */
+  h1.titre, .titre {
+    font-family: 'Passions Conflict', cursive;
+  }
+
+  .text {
+    font-family: 'Story Script', cursive;
+  }
+  --green-amande: #a8c69f;
+
+  --popover-foreground: oklch(0.145 0 0);
+  @font-face {
+     font-family: 'Passions Conflict';
+     src: url('/fonts/Passions_Conflict/PassionsConflict-Regular.ttf') format('truetype');
+     font-weight: normal;
+     font-style: normal;
+  }
+
+  @font-face {
+     font-family: 'Story Script';
+     src: url('/fonts/Story_Script/StoryScript-Regular.ttf') format('truetype');
+     font-weight: normal;
+     font-style: normal;
+  }
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  /* Add custom fonts to theme */
+  --font-passions: "Passions Conflict", cursive;
+  --font-story: "Story Script", cursive;
+  /* Define custom colors in theme with new primary colors */
+  --color-neutral-cream: #faf7f2;
+  --color-neutral-beige: #e8e3d6;
+  --color-neutral-brown: #453630;
+  --color-text-dark: #1a1a1a;
+  --color-text-gray: #6b6b6b;
+  --color-primary-brown: #6b5b4f;
+  --color-primary-beige: #d4af8f;
+  --color-accent-red: #dc153d;
+  --color-green-amande: #a8c69f;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-color: var(--neutral-cream);
+    color: var(--text-dark);
+  }
+
+  /* Add font-face declarations for custom fonts */
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: -1px;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3.75rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 2.25rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 1.875rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    h4 {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    line-height: 1.625;
+  }
+}
+
+@layer components {
+  .container-max {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-max {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+  }
+
+  /* Updated CTA button colors */
+  .cta-red {
+    background-color: var(--primary-brown);
+    color: var(--white);
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+  }
+
+  .cta-red:hover {
+    transform: scale(1.05);
+  }
+
+  .cta-outline {
+    border: 2px solid var(--primary-beige);
+    color: var(--primary-beige);
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .cta-outline:hover {
+    background-color: var(--primary-beige);
+    color: var(--text-dark);
+  }
+
+  .glass {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(1rem);
+  }
+
+  /* Updated glow effect color */
+  .glow-gold {
+    box-shadow: 0 0 40px rgba(212, 175, 143, 0.4);
+  }
+
+  .text-balance-custom {
+    text-wrap: balance;
+  }
+}
+
+/* GSAP animations */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(212, 175, 143, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 175, 143, 0.4);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #faf7f2;
+}
+
+/* Updated scrollbar color */
+::-webkit-scrollbar-thumb {
+  background: #d4af8f;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dc153d;
+}
