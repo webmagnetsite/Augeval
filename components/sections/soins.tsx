@@ -53,8 +53,8 @@ export default function Soins() {
         gsap.to(".soins-title, .soins-subtitle", {
           opacity: 1,
           y: 0,
-          stagger: 0.1,
-          duration: 0.6,
+          stagger: 0.5,
+          duration: 1.6,
           ease: "power2.out",
         })
 
@@ -62,19 +62,51 @@ export default function Soins() {
         gsap.to(".soin-card", {
           opacity: 1,
           scale: 1,
-          stagger: 0.15,
-          duration: 0.6,
+          stagger: 0.7,
+          duration: 1.6,
           ease: "power2.out",
         })
       }, sectionRef)
-
-      return () => {
-        ctx.revert()
-        clearTimeout(timer)
-      }
-    }, 100)
-
+      return () => ctx.revert()
+    }, 0)
     return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".soins-title, .soins-subtitle", {
+        scrollTrigger: {
+          trigger: ".soins-title",
+          start: "top 75%",
+        },
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+      })
+
+      gsap.utils.toArray<HTMLElement>(".soin-card").forEach((card, i) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 60, filter: "blur(8px)" },
+          {
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 1.1,
+            delay: i * 0.13,
+            ease: "cubic-bezier(0.22, 1, 0.36, 1)", // springy
+          }
+        )
+      })
+    }, sectionRef)
+    return () => ctx.revert()
   }, [])
 
   return (
@@ -109,7 +141,7 @@ export default function Soins() {
                 <img src={soin.image || "/placeholder.svg"} alt={soin.title} className="w-full h-full object-cover" />
                 <div
                   className="absolute top-4 right-4 px-4 py-2 rounded-full text-xs font-bold"
-                  style={{ backgroundColor: "#D4AF8F", color: "#1a1a1a" }}
+                  style={{ backgroundColor: "#dc153d", color: "white" }}
                 >
                   {soin.badge}
                 </div>
@@ -130,7 +162,7 @@ export default function Soins() {
                 <div className="mb-6">
                   {soin.benefits.map((benefit, i) => (
                     <div key={i} className="flex items-start gap-2 mb-2">
-                      <Check className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: "#D4AF8F" }} />
+                      <Check className="w-5 h-5 shrink-0 mt-0.5" style={{ color: "#D4AF8F" }} />
                       <span className="text-sm" style={{ color: "#666" }}>
                         {benefit}
                       </span>

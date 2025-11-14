@@ -55,9 +55,9 @@ export default function Footer() {
                 { label: "Offres", href: "#offres" },
                 { label: "Galerie", href: "#galerie" },
                 { label: "Contact", href: "#contact" },
-              ].map((item) => (
+              ].map((item, idx) => (
                 <Link
-                  key={item.href}
+                  key={item.label + idx}
                   href={item.href}
                   className="text-sm text-text-gray hover:text-primary-beige transition-colors block"
                 >
@@ -133,7 +133,7 @@ export default function Footer() {
       <button
         id="scroll-to-top"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-8 right-8 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform hidden z-40"
+        className="fixed bottom-8 right-8 w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-40"
         style={{ backgroundColor: "#D4AF8F", color: "white" }}
       >
         <ArrowUp className="ml-[18px]" size={20} />

@@ -11,34 +11,14 @@
   --accent-red: #dc153d;
   --neutral-cream: #faf7f2;
   --neutral-beige: #e8e3d6;
-  --text-dark: #1a1a1a;
+  --text-dark: #2c2c2c;
   --text-gray: #6b6b6b;
   --white: #ffffff;
 
   /* Classes pour les polices personnalisées */
-  h1.titre, .titre {
-    font-family: 'Passions Conflict', cursive;
-  }
-
-  .text {
-    font-family: 'Story Script', cursive;
-  }
+  
   --green-amande: #a8c69f;
-
   --popover-foreground: oklch(0.145 0 0);
-  @font-face {
-     font-family: 'Passions Conflict';
-     src: url('/fonts/Passions_Conflict/PassionsConflict-Regular.ttf') format('truetype');
-     font-weight: normal;
-     font-style: normal;
-  }
-
-  @font-face {
-     font-family: 'Story Script';
-     src: url('/fonts/Story_Script/StoryScript-Regular.ttf') format('truetype');
-     font-weight: normal;
-     font-style: normal;
-  }
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -100,9 +80,6 @@
 @theme inline {
   --font-sans: "Inter", system-ui, sans-serif;
   --font-serif: "Playfair Display", serif;
-  /* Add custom fonts to theme */
-  --font-passions: "Passions Conflict", cursive;
-  --font-story: "Story Script", cursive;
   /* Define custom colors in theme with new primary colors */
   --color-neutral-cream: #faf7f2;
   --color-neutral-beige: #e8e3d6;

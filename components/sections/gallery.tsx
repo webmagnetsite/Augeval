@@ -124,7 +124,7 @@ export default function Gallery() {
           slidesPerView="auto"
           spaceBetween={30}
           coverflowEffect={{
-            rotate: 50,
+            rotate: 10,
             stretch: 0,
             depth: 100,
             modifier: 2,
